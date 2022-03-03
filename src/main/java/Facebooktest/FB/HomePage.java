@@ -46,6 +46,9 @@ public class HomePage extends Testbase {
 	WebElement Gender1;
 	@FindBy(xpath = "//label[contains(text(),'Male')]")
 	WebElement Gender2;
+	
+	@FindBy(xpath="//*[@id=\"pageFooterChildren\"]/ul")
+	WebElement LinksonFBsignuppage;
 
 public HomePage() {
 	PageFactory.initElements(driver,this);{
@@ -80,15 +83,18 @@ public HomePage() {
 	 public void SelectM() throws InterruptedException {
 		 Thread.sleep(3000);
 		 Utility.selectdesired(Bmonth, "Aug");
+		 Thread.sleep(1000);
+		 Utility.selectdesired(Bdate, "13");
+		 Thread.sleep(1000);
+		 Utility.selectdesired(Byear, "2011");
 		 }
-	 public void Selectd() throws InterruptedException {
-		 Thread.sleep(3000);
-		 Utility.selectdesiredD(Bdate, "13");;
-		 }
-	 public void Selecty() throws InterruptedException {
-		 Thread.sleep(3000);
-		 Utility.selectdesiredY(Byear, "2022");;
-		 }
+
+			/*
+			 * public void Selectd() throws InterruptedException { Thread.sleep(3000);
+			 * Utility.selectdesiredD(Bdate, "13");; } public void Selecty() throws
+			 * InterruptedException { Thread.sleep(3000); Utility.selectdesiredY(Byear,
+			 * "2022");; }
+			 */
 	 public void SelectGender() throws InterruptedException {
 		 Thread.sleep(3000);
 		// Utility.Genericclick(Gender1);
@@ -98,6 +104,9 @@ public HomePage() {
 		 Thread.sleep(1000);
 		 Gender1.isSelected();
 		 }
+	 public void allavailablelinks() {
+		 Utility.genericlinksonpage(LinksonFBsignuppage);
+	 }
 	 
 	 
 }
